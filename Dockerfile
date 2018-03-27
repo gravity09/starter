@@ -4,10 +4,10 @@ WORKDIR /app
 
 ADD . /app
 
-RUN pip install capturer cement coverage numpy pytest pytest-cov pylint
-
-RUN pip install pytest-pep8 
+RUN pip install capturer cement coverage numpy pytest pytest-cov pep8 pytest-pep8
 
 RUN py.test --junitxml=/data/test_report.xml --cov=project --cov-report=xml:/data/coverage.xml
+
+RUN py.test --pep8 --junitxml=pep8.out | tee pep8.out
 
 CMD /bin/bash
