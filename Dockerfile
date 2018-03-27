@@ -10,6 +10,4 @@ RUN pip install pytest-pep8
 
 RUN py.test --junitxml=/data/test_report.xml --cov=project --cov-report=xml:/data/coverage.xml
 
-RUN py.test --pep8
-
 CMD /bin/bash
