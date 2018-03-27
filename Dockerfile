@@ -1,11 +1,15 @@
-FROM python:2.7
+FROM ubuntu:16.04
 
-WORKDIR /app
+RUN apt-get update
 
-ADD . /app
+RUN apt-get install openssh-server -y
 
-RUN pip install capturer cement coverage numpy pytest pytest-cov
+RUN mkdir /var/run/sshd
 
-RUN py.test --junitxml=/data/test_report.xml --cov=project --cov-report=xml:/data/coverage.xml
+RUN apt-get install default-jre -y
+
+RUN apt-get install default-jdk -y
+
+RUN /usr/sbin/sshd
 
 CMD /bin/bash
