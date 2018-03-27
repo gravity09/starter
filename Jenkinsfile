@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'chmod 755 commands'
                 sh './commands'
             }
         }
