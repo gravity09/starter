@@ -10,6 +10,7 @@ pipeline {
                 sh 'chmod 755 commands'
                 sh './commands'
             }
+            input 'Ready to go'
         }
         stage('test') {
             steps {
@@ -26,6 +27,7 @@ pipeline {
                 
                 
                  }
+             input 'Ready to go'
             }
             
             
@@ -35,6 +37,7 @@ pipeline {
                 sh 'docker pull gravity2017/mmp:ravi03'
                 sh 'docker run -p 443:80 -it -d gravity2017/mmp:ravi03'
             }
+             input 'Ready to go'
         }
     }
     post {
