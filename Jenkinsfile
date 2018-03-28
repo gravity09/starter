@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh 'cat ~/my_password.txt | docker login -u gravity2017 --password-stdin'
                 sh 'docker pull gravity2017/mmp:ravi03'
-                sh 'docker run -p 80:80 -it -d gravity2017/mmp:ravi03'
+                sh 'docker run -p 443:80 -it -d gravity2017/mmp:ravi03'
             }
         }
     }
