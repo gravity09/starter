@@ -12,8 +12,9 @@ pipeline {
     }
     post {
       always {
-        junit '**/reports/junit/*.xml'
-        step([$class: 'CoberturaPublisher', coberturaReportFile: 'target/site/cobertura/coverage.xml'])
+        junit '/var/jenkins/workspace/pipeline test/test_report.xml'
+        junit '/var/jenkins/workspace/pipeline test/test_report.xml'
+        step([$class: 'CoberturaPublisher', coberturaReportFile: '/var/jenkins/workspace/pipeline test/coverage.xml'])
       }
    } 
 }
