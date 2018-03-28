@@ -10,7 +10,7 @@ pipeline {
                 sh 'chmod 755 commands'
                 sh './commands'
             }
-            
+        }
         stage('test') {
             steps {
                 sh 'docker pull gravity2017/mmp:ravi03'
