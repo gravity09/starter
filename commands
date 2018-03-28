@@ -8,4 +8,4 @@ docker cp sample03:/data/pep8.out .
 cat ~/my_password.txt | docker login -u gravity2017 --password-stdin
 x=$(cat test_report.xml | sed -e 's/.*failures=\"//;s/\" name.*//')
 if [ $x -eq 0 ]; then docker push gravity2017/mmp:ravi03 ; fi
-sleep 1m
+sleep 5m
