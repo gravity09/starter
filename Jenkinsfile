@@ -12,9 +12,9 @@ pipeline {
     }
     post {
       always {
-        junit '/var/jenkins/workspace/pipeline test/test_report.xml'
-        junit '/var/jenkins/workspace/pipeline test/test_report.xml'
-        step([$class: 'CoberturaPublisher', coberturaReportFile: '/var/jenkins/workspace/pipeline test/coverage.xml'])
+        junit 'test_result.xml'
+        junit 'pep8.out'
+        cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false
       }
    } 
 }
